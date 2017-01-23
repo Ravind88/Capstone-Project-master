@@ -1,0 +1,99 @@
+<resources xmlns:xliff="http://schemas.android.com/tools">
+    <!-- <string name="facebook_app_id">623432824524593</string>-->
+    <string name="map_api_key">AIzaSyA7Zm_YdzIV2ZrvIBloUaS1QSG3aivr2Z8</string>
+    <string name="api_key">AIzaSyA0z0ZLyaVAnlpfAFvH4jelw3k2yRDrKoI</string>
+
+    <string name="ads">ca-app-pub-3494460995981597/8313439693</string>
+    <string name="facebook_app_id">390230454655827</string>
+    <string name="app_name">Gantavya</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+
+    <string name="please_wait">Please wait …</string>
+    <string name="loading">Loading …</string>
+    <string name="ok">OK</string>
+
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="label_yes">Yes</string>
+    <string name="label_no">No</string>
+
+    <!-- Date Util -->
+    <string name="date_util_term_less">less than</string>
+    <string name="date_util_term_a">a</string>
+    <string name="date_util_term_an">an</string>
+
+    <string name="date_util_unit_second">second</string>
+    <string name="date_util_unit_seconds">seconds</string>
+    <string name="date_util_unit_minute">minute</string>
+    <string name="date_util_unit_minutes">mins</string>
+    <string name="date_util_unit_hour">hour</string>
+    <string name="date_util_unit_hours">hours</string>
+    <string name="date_util_unit_day">day</string>
+    <string name="date_util_unit_days">days</string>
+    <string name="date_util_unit_month">month</string>
+    <string name="date_util_unit_months">months</string>
+    <string name="date_util_unit_year">year</string>
+    <string name="date_util_unit_years">years</string>
+    <string name="date_util_suffix">ago</string>
+
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="enter_valid_credentials">Please enter valid credentials.</string>
+    <string name="retype_password">Retype Password</string>
+    <string name="username_required">Please enter valid username</string>
+    <string name="mobile_valid_required">Mobile number must be between 8–13 digits</string>
+    <string name="password_match_validation">Both password must be same</string>
+    <string name="email_required">Please enter valid email</string>
+    <string name="old_pass_required">Please enter old password</string>
+    <string name="password_min_required">Password length should be between 6–18 characters</string>
+    <string name="new_pass_required">Please enter new password</string>
+    <string name="conf_pass_required">Please enter confirm password</string>
+    <string name="new_conf_match">New password and confirm password must match</string>
+    <string name="email_valid_required">Please enter valid email</string>
+    <string name="password_required">Please enter password</string>
+    <string name="email_id">Email Address</string>
+    <string name="full_name">Full Name</string>
+    <string name="registration_failed">Registration failed. Please try again</string>
+    <string name="user_exists">User already exists</string>
+    <string name="login_with_facebook">Login with Facebook</string>
+    <string name="choose_place">Choose Place</string>
+    <string name="exit_app_message">Are you sure you exit app ?</string>
+    <string name="guest_user">Guest User</string>
+    <string name="navigation_drawer_open" />
+    <string name="my_saved_restaurants">My Saved Restaurants</string>
+    <string name="my_saved_places">My Saved Places</string>
+    <string name="my_saved_hotels">My Saved Hotels</string>
+    <string name="share_app">Share App</string>
+    <string name="logout">Logout</string>
+    <string name="logout_confirmation_alert">Are you sure you want to logout?</string>
+    <string name="search">Search</string>
+    <string name="home">Home</string>
+    <string name="tourist_attractions">Tourist Attractions</string>
+    <string name="hotels">Hotels</string>
+    <string name="food_court">Food Court</string>
+    <string name="shopping">Shopping</string>
+    <string name="flights">Flights</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="call">CALL</string>
+    <string name="website">WEBSITE</string>
+    <string name="reviews">Reviews</string>
+    <string name="save">SAVE</string>
+    <string name="address">ADDRESS</string>
+    <string name="photo">PHOTOS</string>
+    <string name="time">TIME</string>
+    <string name="tourist">Tourists</string>
+    <string name="tourist_places">Tourist Places</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+
+    <string name="price_flight">Rs. <xliff:g id="kilogram">%1$d</xliff:g></string>
+    <string name="flight_departure">Departure Terminal : <xliff:g id="kilogram">%1$s</xliff:g></string>
+    <string name="no_data">No saved data available</string>
+    <string name="lbl_hiphen">-</string>
+    <string name="saved">SAVED</string>
+    <string name="already_added">Already Added</string>
+
+
+</resources>

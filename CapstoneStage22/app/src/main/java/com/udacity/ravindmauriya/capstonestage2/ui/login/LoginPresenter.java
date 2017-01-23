@@ -1,0 +1,96 @@
+package com.udacity.ravindmauriya.capstonestage2.ui.login;
+
+import android.app.Activity;
+import android.content.Context;
+
+
+import com.app.facebooklibrary.FBBean;
+import com.udacity.ravindmauriya.capstonestage2.R;
+import com.udacity.ravindmauriya.capstonestage2.base.ApplicationController;
+import com.udacity.ravindmauriya.capstonestage2.model.RequestBean;
+import com.udacity.ravindmauriya.capstonestage2.ui.common.ApiListener;
+import com.udacity.ravindmauriya.capstonestage2.ui.common.ApiRegisterListener;
+import com.udacity.ravindmauriya.capstonestage2.utility.Utility;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+
+public class LoginPresenter implements ApiListener,ApiRegisterListener {
+
+    /******************************************************************************************
+     * - LoginPresenter has a reference to both the View and the Interactor
+     * - LoginPresenter retrieves data from the model, and notifies the view to display it.
+     * - OnLoginFinishedListener adds the methods that are necessary for asynchronous callbacks which leaves the rest of the interface intact
+     * ******************************************************************************************
+     */
+
+    // Referencing any class that implements the ILoginView interface provides greater flexibility
+    private LoginView view;
+    private AsyncLoginInteractor interactor;
+
+    LoginPresenter(LoginView loginView) {
+        this.view = loginView;
+        this.interactor = new AsyncLoginInteractor();
+    }
+
+    void attemptLogin(RequestBean requestBean) {
+        if (isValid(requestBean)) {
+            if (ApplicationController.getApplicationInstance().isNetworkConnected()) {
+                view.showProgress(true);
+                interactor.validateCredentialsAsync(this, requestBean);
+            } else
+                Utility.showSnackBar((Activity) getViewContext(),
+                        getViewContext().getString(R.string.no_internet_connection));
+        }
+    }
+
+
+    void attemptFbLogin( FBBean requestBean) {
+            if (ApplicationController.getApplicationInstance().isNetworkConnected()) {
+                view.showProgress(true);
+                interactor.facebookLoginAsync(this, requestBean);
+            } else
+                Utility.showSnackBar((Activity) getViewContext(),
+                        getViewContext().getString(R.string.no_internet_connection));
+    }
+    private boolean isValid(RequestBean requestBean) {
+        if (!Utility.validateInputFields(requestBean.getUsername(),
+                view.getViewContext(), R.string.username_required)) {
+            return false;
+        } else if (!Utility.validateInputFields(requestBean.getPassword(),
+                view.getViewContext(), R.string.password_required)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public void onApiSuccess(ArrayList<LinkedHashMap> response) {
+        view.showProgress(false);
+        if (response == null || response.isEmpty())
+            view.loginFailed("Failed");
+        else
+            view.navigateHome(response);
+    }
+
+
+
+    @Override
+    public void onApiSuccess() {
+
+    }
+
+    @Override
+    public void fbApiSuccess(FBBean fb) {
+        view.showProgress(false);
+        if (fb == null )
+            view.loginFailed("Failed");
+        else
+            view.navigateFromFbHome(fb);
+    }
+
+    @Override
+    public Context getViewContext() {
+        return view.getViewContext();
+    }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CapstoneStage22.iml" filepath="$PROJECT_DIR$/CapstoneStage22.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/facebooklibrary/facebooklibrary.iml" filepath="$PROJECT_DIR$/facebooklibrary/facebooklibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kumulos-2.1.0-debug/kumulos-2.1.0-debug.iml" filepath="$PROJECT_DIR$/kumulos-2.1.0-debug/kumulos-2.1.0-debug.iml" />
+    </modules>
+  </component>
+</project>

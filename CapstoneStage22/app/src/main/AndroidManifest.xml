@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.udacity.ravindmauriya.capstonestage2">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name=".base.ApplicationController"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="theme, allowBackup">
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".ui.register.RegisterActivity"
+            android:label="@string/register"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/login"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing" />
+
+
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:label="@string/home"
+            android:screenOrientation="portrait"
+            android:configChanges="locale|touchscreen|orientation|screenLayout|screenSize|keyboardHidden|uiMode"
+            android:windowSoftInputMode="adjustNothing" />
+
+        <activity
+            android:name=".ui.restaurant_list.RestaurantListActivity"
+            android:label="@string/restaurants"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.options.SelectOptionActivity"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name=".ui.place_detail.PlaceDetailActivity"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name=".ui.reviews.ReviewActivity"
+            android:label="@string/reviews"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.tourist.TouristsActivity"
+            android:label="@string/tourist"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.tourist_places.TouristPlaceListActivity"
+            android:label="@string/tourist_places"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.hotels.HotelListActivity"
+            android:label="@string/hotels"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.flights.FlightsListActivity"
+            android:label="@string/flights"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name=".ui.flights.FlightDetailActivity"
+            android:label="@string/flights"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.shopping.ShoppingActivity"
+            android:label="@string/shopping"
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name=".receivers.NetworkChangeReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".ui.widget.MyAppWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/example_appwidget_info" />
+        </receiver>
+
+
+        <receiver
+            android:name=".ui.widget.MyWidgetIntentReceiver"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="com.udacity.ravindmauriya.capstonestage2.UPDATE_WIDGET" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/example_appwidget_info" />
+        </receiver>
+
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/api_key" />
+
+        <provider
+            android:name=".database.TravelProvider"
+            android:authorities="com.udacity.ravindmauriya.capstonestage2.provider"
+            android:exported="false"
+            android:syncable="true" />
+
+    </application>
+
+</manifest>
