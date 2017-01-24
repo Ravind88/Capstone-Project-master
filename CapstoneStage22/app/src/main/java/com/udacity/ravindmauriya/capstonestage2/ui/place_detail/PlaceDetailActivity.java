@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -75,7 +76,7 @@ public class PlaceDetailActivity extends BaseActivity implements OnMapReadyCallb
 
     public void setMap(double lat, double lng) {
         LatLng sydney = new LatLng(lat, lng);
-        googleMap.addMarker(new MarkerOptions().position(sydney).title("Here"));
+        googleMap.addMarker(new MarkerOptions().position(sydney).title(getResources().getString(R.string.lbl_here)));
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lng), 12.0f));
     }
 
@@ -108,7 +109,7 @@ public class PlaceDetailActivity extends BaseActivity implements OnMapReadyCallb
     protected void onResume() {
         super.onResume();
         Tracker t = ApplicationController.getApplicationInstance().getTracker();
-        t.setScreenName("Place Detail Screen");
+        t.setScreenName(getResources().getString(R.string.lbl_place_detail_screen));
         t.send(new HitBuilders.AppViewBuilder().build());
     }
 
@@ -127,12 +128,12 @@ public class PlaceDetailActivity extends BaseActivity implements OnMapReadyCallb
                             Intent sharingIntent = new Intent(Intent.ACTION_SEND);
                             sharingIntent.setType("text/plain");
                             sharingIntent.putExtra(Intent.EXTRA_TEXT,
-                                    "Download traveladvisor to help plan your trips perfectly.");
+                                    getResources().getString(R.string.msg_place_adviser));
                             startActivity(Intent.createChooser(sharingIntent,
                                     "Share using"));
                         } catch (Exception e) {
                             Log.i("Error", e.getMessage());
-                            Utility.showSnackBar(getActivity(), "No activity found to open website");
+                            Utility.showSnackBar(getActivity(), getResources().getString(R.string.msg_no_website_found));
 
                         }
                         break;
@@ -191,7 +192,7 @@ public class PlaceDetailActivity extends BaseActivity implements OnMapReadyCallb
                     intent.setData(Uri.parse(place_website + ""));
                     startActivity(intent);
                 } catch (Exception e) {
-                    Utility.showSnackBar(getActivity(), "No activity found to open website");
+                    Utility.showSnackBar(getActivity(), getResources().getString(R.string.msg_no_website_found));
                 }
             }
         });
@@ -264,7 +265,7 @@ public class PlaceDetailActivity extends BaseActivity implements OnMapReadyCallb
             case 1:
                 if (db.getPlaces(place_id)) {
                     saveImage.setImageResource(R.drawable.favourite_icon_red);
-                    saveText.setText("SAVED");
+                    saveText.setText(getResources().getString(R.string.lbl_saved));
                     saveText.setTextColor(Color.RED);
                 }
                 break;
@@ -272,7 +273,7 @@ public class PlaceDetailActivity extends BaseActivity implements OnMapReadyCallb
             case 2:
                 if (db.gethotel(place_id)) {
                     saveImage.setImageResource(R.drawable.favourite_icon_red);
-                    saveText.setText("SAVED");
+                    saveText.setText(getResources().getString(R.string.lbl_saved));
                     saveText.setTextColor(Color.RED);
                 }
                 break;
@@ -281,7 +282,7 @@ public class PlaceDetailActivity extends BaseActivity implements OnMapReadyCallb
 
                 if (db.getRes(place_id)) {
                     saveImage.setImageResource(R.drawable.favourite_icon_red);
-                    saveText.setText("SAVED");
+                    saveText.setText(getResources().getString(R.string.lbl_saved));
                     saveText.setTextColor(Color.RED);
                 }
                 break;
@@ -289,7 +290,7 @@ public class PlaceDetailActivity extends BaseActivity implements OnMapReadyCallb
             case 4:
                 if (db.getPlaces(place_id)) {
                     saveImage.setImageResource(R.drawable.favourite_icon_red);
-                    saveText.setText("SAVED");
+                    saveText.setText(getResources().getString(R.string.lbl_saved));
                     saveText.setTextColor(Color.RED);
                 }
                 break;
@@ -362,7 +363,7 @@ public class PlaceDetailActivity extends BaseActivity implements OnMapReadyCallb
             } catch (Exception e) {
                 Log.i("Error", e.getMessage());
             }
-            rating.setText(rate + " user ratings");
+            rating.setText(rate + " " + getResources().getString(R.string.lbl_use_rating));
 
             if (list.has(TAG_OPENING_HOURS)) {
                 JSONObject opening_hours = list.getJSONObject(TAG_OPENING_HOURS);
@@ -380,7 +381,7 @@ public class PlaceDetailActivity extends BaseActivity implements OnMapReadyCallb
                     textView.setPadding(3, 8, 3, 8);
                     textView.setText(time1);
                     textView.setTextSize(17);
-                    textView.setTextColor(Color.parseColor("#2f2f2f"));
+                    textView.setTextColor(ContextCompat.getColor(PlaceDetailActivity.this, R.color.color_2f2f2f));
 
                     timetable.addView(textView);
                 }

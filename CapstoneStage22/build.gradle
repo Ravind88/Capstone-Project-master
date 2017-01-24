@@ -11,12 +11,13 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
-
 allprojects {
+    buildDir = "C:/tmp/${rootProject.name}/${project.name}"
     repositories {
         jcenter()
     }
 }
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir

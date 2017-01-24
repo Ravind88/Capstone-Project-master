@@ -94,6 +94,12 @@
     <string name="lbl_hiphen">-</string>
     <string name="saved">SAVED</string>
     <string name="already_added">Already Added</string>
+    <string name="lbl_saved">SAVED</string>
+    <string name="lbl_use_rating">user ratings</string>
+    <string name="lbl_here">Here</string>
+    <string name="lbl_place_detail_screen">Place Detail Screen</string>
+    <string name="msg_place_adviser">Download traveladvisor to help plan your trips perfectly.</string>
+    <string name="msg_no_website_found">No activity found to open website.</string>
 
 
 </resources>
