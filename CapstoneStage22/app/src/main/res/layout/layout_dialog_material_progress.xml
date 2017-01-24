@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#AA000000"
     android:gravity="center"
     android:orientation="horizontal"
     android:paddingBottom="@dimen/margin_12"
-    android:paddingLeft="@dimen/margin_13"
-    android:paddingRight="@dimen/margin_10"
-    android:paddingTop="@dimen/margin_12">
+    android:paddingStart="@dimen/margin_13"
+    android:paddingEnd="@dimen/margin_10"
+    android:paddingTop="@dimen/margin_12"
+    tools:ignore="RtlCompat">
 
     <ImageView
         android:id="@+id/my_image_view"

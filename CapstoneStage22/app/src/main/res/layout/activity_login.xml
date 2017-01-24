@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:ignore="RtlCompat"
     android:background="@drawable/login_splash"
     android:fitsSystemWindows="true">
 
@@ -20,7 +22,7 @@
                 android:id="@+id/register_in_txtvw"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/text_box_height"
-                android:layout_marginRight="@dimen/margin_30"
+                android:layout_marginEnd="@dimen/margin_30"
                 android:layout_marginTop="@dimen/margin_40"
                 android:alpha="0.9"
                 android:background="@drawable/shape_color_primary_round"
@@ -28,7 +30,8 @@
                 android:padding="@dimen/margin_15"
                 android:text="@string/register"
                 android:textColor="@android:color/white"
-                android:textSize="@dimen/text_16" />
+                android:textSize="@dimen/text_16"
+                 />
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -55,16 +58,16 @@
                     android:id="@+id/username_ed"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_box_height"
-                    android:layout_marginLeft="@dimen/margin_30"
-                    android:layout_marginRight="@dimen/margin_30"
+                    android:layout_marginStart="@dimen/margin_30"
+                    android:layout_marginEnd="@dimen/margin_30"
                     android:layout_marginTop="@dimen/margin_50"
                     android:background="@drawable/shape_black_round"
                     android:gravity="center"
                     android:hint="@string/username"
                     android:maxLength="50"
                     android:nextFocusDown="@+id/password_ed"
-                    android:paddingLeft="@dimen/margin_20"
-                    android:paddingRight="@dimen/margin_20"
+                    android:paddingStart="@dimen/margin_20"
+                    android:paddingEnd="@dimen/margin_20"
                     android:singleLine="true"
                     android:textColor="@android:color/black"
                     android:textColorHint="@android:color/black" />
@@ -73,8 +76,8 @@
                     android:id="@+id/password_ed"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_box_height"
-                    android:layout_marginLeft="@dimen/margin_30"
-                    android:layout_marginRight="@dimen/margin_30"
+                    android:layout_marginStart="@dimen/margin_30"
+                    android:layout_marginEnd="@dimen/margin_30"
                     android:layout_marginTop="@dimen/margin_20"
                     android:background="@drawable/shape_black_round"
                     android:gravity="center"
@@ -82,8 +85,8 @@
                     android:imeOptions="actionDone|actionGo"
                     android:inputType="textPassword"
                     android:maxLength="15"
-                    android:paddingLeft="@dimen/margin_20"
-                    android:paddingRight="@dimen/margin_20"
+                    android:paddingStart="@dimen/margin_20"
+                    android:paddingEnd="@dimen/margin_20"
                     android:textColor="@android:color/black"
                     android:textColorHint="@android:color/black" />
 
@@ -92,8 +95,8 @@
                     android:id="@+id/login_tv"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_box_height"
-                    android:layout_marginLeft="@dimen/margin_30"
-                    android:layout_marginRight="@dimen/margin_30"
+                    android:layout_marginStart="@dimen/margin_30"
+                    android:layout_marginEnd="@dimen/margin_30"
                     android:layout_marginTop="@dimen/margin_40"
                     android:alpha="0.9"
                     android:background="@drawable/shape_color_primary_round"
@@ -106,8 +109,8 @@
                     android:id="@+id/facebook"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_box_height"
-                    android:layout_marginLeft="@dimen/margin_30"
-                    android:layout_marginRight="@dimen/margin_30"
+                    android:layout_marginStart="@dimen/margin_30"
+                    android:layout_marginEnd="@dimen/margin_30"
                     android:layout_marginTop="@dimen/margin_30"
                     android:alpha="0.9"
                     android:background="@drawable/shape_color_5bd7c6_round"
